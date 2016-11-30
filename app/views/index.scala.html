@@ -1,0 +1,25 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(message: String)
+
+@*
+ * Call the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+@main("Welcome to Play") {
+
+  <p>Enter coupon information below</p>
+
+  <form action="@routes.HomeController.addCoupon()" method="post">
+      <p>Name: </p><input type="text" name="name"/>
+      <p>Description: </p><input type="text" name="description"/>
+      <p>PromoCode: </p><input type="text" name="promoCode"/>
+      <p>Discount rate: </p><input type="text" name="discountRate"/>
+      <p>Expiration date: </p><input type="text" name="expirationDate"/>
+      <p>Business Email: </p><input type="text" name="bemail"/>
+      <button>Add coupon</button>
+  </form>
+}
